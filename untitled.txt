@@ -1,0 +1,492 @@
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+  <meta charset="UTF-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />  
+  <title>Advanced Responsive Website</title>  
+  <style>  
+    /* Reset */  
+    * {  
+      margin: 0;  
+      padding: 0;  
+      box-sizing: border-box;  
+    }  body {  
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+  background-color: #f9fafb;  
+  color: #333;  
+  line-height: 1.6;  
+}  
+
+/* Container */  
+.container {  
+  max-width: 1200px;  
+  margin: auto;  
+  padding: 0 20px;  
+}  
+
+/* Header */  
+header {  
+  background-color: #24292e;  
+  color: white;  
+  padding: 20px 0;  
+  position: fixed;  
+  width: 100%;  
+  top: 0;  
+  z-index: 1000;  
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);  
+}  
+
+header .container {  
+  display: flex;  
+  justify-content: space-between;  
+  align-items: center;  
+}  
+
+header .logo {  
+  font-size: 1.8rem;  
+  font-weight: 700;  
+  letter-spacing: 2px;  
+}  
+
+nav {  
+  display: flex;  
+  gap: 20px;  
+}  
+
+nav a {  
+  color: white;  
+  text-decoration: none;  
+  font-weight: 600;  
+  padding: 8px 12px;  
+  border-radius: 4px;  
+  transition: background-color 0.3s ease;  
+}  
+
+nav a:hover,  
+nav a.active {  
+  background-color: #0366d6;  
+}  
+
+/* Hero Section */  
+#hero {  
+  height: 90vh;  
+  background: linear-gradient(rgba(3,102,214,0.8), rgba(3,102,214,0.8)),  
+    url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80')  
+      no-repeat center center/cover;  
+  display: flex;  
+  flex-direction: column;  
+  justify-content: center;  
+  align-items: center;  
+  text-align: center;  
+  color: white;  
+  padding: 0 20px;  
+  margin-top: 70px; /* header height */  
+}  
+
+#hero h1 {  
+  font-size: 3.5rem;  
+  margin-bottom: 20px;  
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7);  
+}  
+
+#hero p {  
+  font-size: 1.3rem;  
+  max-width: 700px;  
+  margin-bottom: 30px;  
+  text-shadow: 0 2px 5px rgba(0,0,0,0.6);  
+}  
+
+#hero .btn {  
+  background-color: #04aaff;  
+  color: white;  
+  font-weight: 700;  
+  padding: 15px 30px;  
+  border: none;  
+  border-radius: 40px;  
+  font-size: 1.2rem;  
+  cursor: pointer;  
+  transition: background-color 0.3s ease;  
+  box-shadow: 0 5px 15px rgba(4,170,255,0.4);  
+  text-transform: uppercase;  
+}  
+
+#hero .btn:hover {  
+  background-color: #0288d1;  
+}  
+
+/* Features Section */  
+#features {  
+  background-color: white;  
+  padding: 60px 0;  
+  text-align: center;  
+}  
+
+#features h2 {  
+  font-size: 2.8rem;  
+  margin-bottom: 40px;  
+  color: #24292e;  
+}  
+
+.features-grid {  
+  display: grid;  
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));  
+  gap: 30px;  
+  max-width: 1100px;  
+  margin: auto;  
+}  
+
+.feature-card {  
+  background: #f0f4f8;  
+  padding: 30px;  
+  border-radius: 10px;  
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);  
+  transition: transform 0.3s ease;  
+}  
+
+.feature-card:hover {  
+  transform: translateY(-10px);  
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);  
+}  
+
+.feature-card h3 {  
+  margin-bottom: 15px;  
+  color: #0366d6;  
+  font-size: 1.5rem;  
+}  
+
+.feature-card p {  
+  color: #555;  
+  font-size: 1rem;  
+  line-height: 1.4;  
+}  
+
+/* About Section */  
+#about {  
+  padding: 60px 0;  
+  background-color: #e9f1fb;  
+}  
+
+#about .container {  
+  display: flex;  
+  align-items: center;  
+  gap: 40px;  
+  flex-wrap: wrap;  
+}  
+
+#about img {  
+  max-width: 500px;  
+  width: 100%;  
+  border-radius: 12px;  
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);  
+  flex: 1 1 400px;  
+}  
+
+#about .about-text {  
+  flex: 1 1 400px;  
+}  
+
+#about h2 {  
+  font-size: 2.8rem;  
+  margin-bottom: 20px;  
+  color: #24292e;  
+}  
+
+#about p {  
+  font-size: 1.1rem;  
+  color: #555;  
+  line-height: 1.6;  
+}  
+
+/* Services Section */  
+#services {  
+  background-color: white;  
+  padding: 60px 0;  
+  text-align: center;  
+}  
+
+#services h2 {  
+  font-size: 2.8rem;  
+  margin-bottom: 40px;  
+  color: #24292e;  
+}  
+
+.services-list {  
+  display: flex;  
+  gap: 30px;  
+  justify-content: center;  
+  flex-wrap: wrap;  
+}  
+
+.service-item {  
+  background-color: #f0f4f8;  
+  padding: 30px 20px;  
+  border-radius: 12px;  
+  width: 280px;  
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);  
+  transition: box-shadow 0.3s ease;  
+}  
+
+.service-item:hover {  
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);  
+}  
+
+.service-item h3 {  
+  margin-bottom: 15px;  
+  color: #0366d6;  
+  font-size: 1.4rem;  
+}  
+
+.service-item p {  
+  font-size: 1rem;  
+  color: #555;  
+  line-height: 1.4;  
+}  
+
+/* Testimonials Section */  
+#testimonials {  
+  background-color: #e9f1fb;  
+  padding: 60px 0;  
+  text-align: center;  
+}  
+
+#testimonials h2 {  
+  font-size: 2.8rem;  
+  margin-bottom: 40px;  
+  color: #24292e;  
+}  
+
+.testimonials-list {  
+  max-width: 900px;  
+  margin: auto;  
+  display: grid;  
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));  
+  gap: 30px;  
+}  
+
+.testimonial {  
+  background: white;  
+  padding: 25px 30px;  
+  border-radius: 12px;  
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);  
+  font-style: italic;  
+  color: #444;  
+  position: relative;  
+}  
+
+.testimonial::before {  
+  content: "“";  
+  font-size: 4rem;  
+  color: #0366d6;  
+  position: absolute;  
+  top: 15px;  
+  left: 15px;  
+  opacity: 0.2;  
+  font-style: normal;  
+}  
+
+.testimonial p {  
+  margin-bottom: 15px;  
+  line-height: 1.5;  
+}  
+
+.testimonial .author {  
+  font-weight: 700;  
+  color: #0366d6;  
+  font-style: normal;  
+}  
+
+/* Contact Section */  
+#contact {  
+  background-color: white;  
+  padding: 60px 0;  
+  text-align: center;  
+}  
+
+#contact h2 {  
+  font-size: 2.8rem;  
+  margin-bottom: 40px;  
+  color: #24292e;  
+}  
+
+#contact form {  
+  max-width: 500px;  
+  margin: auto;  
+  text-align: left;  
+}  
+
+#contact label {  
+  display: block;  
+  margin-bottom: 8px;  
+  font-weight: 600;  
+  color: #333;  
+}  
+
+#contact input,  
+#contact textarea {  
+  width: 100%;  
+  padding: 12px 15px;  
+  margin-bottom: 20px;  
+  border: 1px solid #ccc;  
+  border-radius: 8px;  
+  font-size: 1rem;  
+  resize: vertical;  
+  transition: border-color 0.3s ease;  
+}  
+
+#contact input:focus,  
+#contact textarea:focus {  
+  border-color: #0366d6;  
+  outline: none;  
+}  
+
+#contact button {  
+  background-color: #0366d6;  
+  color: white;  
+  border: none;  
+  padding: 15px 30px;  
+  border-radius: 50px;  
+  font-size: 1.1rem;  
+  font-weight: 700;  
+  cursor: pointer;  
+  transition: background-color 0.3s ease;  
+  width: 100%;  
+}  
+
+#contact button:hover {  
+  background-color: #024a9f;  
+}  
+
+/* Footer */  
+footer {  
+  background-color: #24292e;  
+  color: white;  
+  text-align: center;  
+  padding: 20px 0;  
+  margin-top: 40px;  
+  font-size: 0.9rem;  
+}  
+
+/* Responsive */  
+@media (max-width: 900px) {  
+  #about .container {  
+    flex-direction: column;  
+  }  
+
+  nav {  
+    flex-wrap: wrap;  
+    justify-content: center;  
+  }  
+}  
+
+@media (max-width: 600px) {  
+  #hero h1 {  
+    font-size: 2.2rem;  
+  }  
+
+  #hero p {  
+    font-size: 1rem;  
+  }  
+
+  nav a {  
+    padding: 6px 10px;  
+  }  
+
+  .services-list {  
+    flex-direction: column;  
+    gap: 20px;  
+  }  
+}
+
+  </style>  
+</head>  
+<body>    <header>  
+    <div class="container">  
+      <div class="logo">MyBrand</div>  
+      <nav>  
+        <a href="#hero" class="active">Home</a>  
+        <a href="#features">Features</a>  
+        <a href="#about">About</a>  
+        <a href="#services">Services</a>  
+        <a href="#testimonials">Testimonials</a>  
+        <a href="#contact">Contact</a>  
+      </nav>  
+    </div>  
+  </header>    <section id="hero">  
+    <h1>Build Your Future with Us</h1>  
+    <p>We create innovative and high-quality web solutions tailored to your needs.</p>  
+    <button class="btn">Get Started</button>  
+  </section>    <section id="features" class="container">  
+    <h2>Our Features</h2>  
+    <div class="features-grid">  
+      <div class="feature-card">  
+        <h3>Fast Performance</h3>  
+        <p>Optimized code and design for lightning-fast user experience across all devices.</p>  
+      </div>  
+      <div class="feature-card">  
+        <h3>Responsive Design</h3>  
+        <p>Looks great and works perfectly on phones, tablets, and desktops.</p>  
+      </div>  
+      <div class="feature-card">  
+        <h3>SEO Friendly</h3>  
+        <p>Built with SEO best practices to improve your website’s ranking and visibility.</p>  
+      </div>  
+    </div>  
+  </section>    <section id="about">  
+    <div class="container">  
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=600&q=80" alt="About Us Image" />  
+      <div class="about-text">  
+        <h2>About Our Company</h2>  
+        <p>We are a passionate team of web developers and designers committed to delivering beautiful and effective web solutions. Our mission is to empower businesses to grow online with innovative technology and creative design.</p>  
+        <p>With years of experience and a customer-centric approach, we ensure your project is completed on time and exceeds expectations.</p>  
+      </div>  
+    </div>  
+  </section>    <section id="services" class="container">  
+    <h2>Our Services</h2>  
+    <div class="services-list">  
+      <div class="service-item">  
+        <h3>Web Development</h3>  
+        <p>Custom websites built with modern technologies and clean code for lasting quality.</p>  
+      </div>  
+      <div class="service-item">  
+        <h3>UI/UX Design</h3>  
+        <p>User-friendly and attractive designs that provide a seamless user experience.</p>  
+      </div>  
+      <div class="service-item">  
+        <h3>Digital Marketing</h3>  
+        <p>Boost your brand visibility with our tailored marketing strategies and SEO services.</p>  
+      </div>  
+    </div>  
+  </section>    <section id="testimonials">  
+    <div class="container">  
+      <h2>What Our Clients Say</h2>  
+      <div class="testimonials-list">  
+        <div class="testimonial">  
+          <p>MyBrand helped our business grow tremendously with their outstanding website and marketing skills. Highly recommended!</p>  
+          <div class="author">– Sarah K.</div>  
+        </div>  
+        <div class="testimonial">  
+          <p>Professional, reliable, and creative team. Our website is stunning and functional thanks to MyBrand.</p>  
+          <div class="author">– Michael T.</div>  
+        </div>  
+        <div class="testimonial">  
+          <p>They delivered on time and exceeded our expectations. The customer service was also top-notch!</p>  
+          <div class="author">– Priya S.</div>  
+        </div>  
+      </div>  
+    </div>  
+  </section>    <section id="contact" class="container">  
+    <h2>Contact Us</h2>  
+    <form action="#" method="POST">  
+      <label for="name">Name</label>  
+      <input type="text" id="name" name="name" placeholder="Your full name" required />  <label for="email">Email</label>  
+  <input type="email" id="email" name="email" placeholder="you@example.com" required />  
+
+  <label for="message">Message</label>  
+  <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>  
+
+  <button type="submit">Send Message</button>  
+</form>
+
+  </section>    <footer>  
+    &copy; 2025 MyBrand. All rights reserved.  
+  </footer>  </body>  
+</html>
